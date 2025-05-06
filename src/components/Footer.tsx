@@ -1,7 +1,7 @@
-'use client'; // Enable client-side interactivity for the accordion functionality
+"use client"; // Enable client-side interactivity for the accordion functionality
 
-import Link from 'next/link';
-import { useState } from 'react';
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Footer() {
   // State to track which accordion sections are open on mobile view
@@ -22,16 +22,16 @@ export default function Footer() {
   };
 
   // State for newsletter subscription form
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
   // Handle newsletter form submission
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     // Here you would typically send the email to your API/backend
-    console.log('Subscribing email:', email);
+    console.log("Subscribing email:", email);
     setSubscribed(true);
-    setEmail('');
+    setEmail("");
     // Reset subscription status after 3 seconds
     setTimeout(() => setSubscribed(false), 3000);
   };
@@ -43,7 +43,7 @@ export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth' // Smooth scrolling animation
+      behavior: "smooth" // Smooth scrolling animation
     });
   };
 
@@ -80,7 +80,7 @@ export default function Footer() {
             {/* Subscription confirmation message - only shown after subscribing */}
             {subscribed && (
               <p className="text-green-600 mt-3 text-sm">
-                Thank you for subscribing! You'll receive our updates soon.
+                Thank you for subscribing! You will receive our updates soon.
               </p>
             )}
           </div>
@@ -132,20 +132,20 @@ export default function Footer() {
           <div className="md:col-span-2">
             <button
               className="flex justify-between items-center w-full md:cursor-default mb-4"
-              onClick={() => toggleSection('about')}
+              onClick={() => toggleSection("about")}
               aria-expanded={openSections.about}
               aria-controls="about-links"
             >
               <h3 className="text-lg font-semibold text-gray-800">About</h3>
               <span className="md:hidden transition-transform duration-200 text-lg">
-                {openSections.about ? '−' : '+'}
+                {openSections.about ? "−" : "+"}
               </span>
             </button>
             
             <div 
               id="about-links"
               className={`transition-all duration-300 overflow-hidden md:h-auto ${
-                openSections.about ? 'max-h-48' : 'max-h-0 md:max-h-48'
+                openSections.about ? "max-h-48" : "max-h-0 md:max-h-48"
               }`}
             >
               <nav>
@@ -179,20 +179,20 @@ export default function Footer() {
           <div className="md:col-span-2">
             <button
               className="flex justify-between items-center w-full md:cursor-default mb-4"
-              onClick={() => toggleSection('resources')}
+              onClick={() => toggleSection("resources")}
               aria-expanded={openSections.resources}
               aria-controls="resource-links"
             >
               <h3 className="text-lg font-semibold text-gray-800">Resources</h3>
               <span className="md:hidden transition-transform duration-200 text-lg">
-                {openSections.resources ? '−' : '+'}
+                {openSections.resources ? "−" : "+"}
               </span>
             </button>
             
             <div 
               id="resource-links"
               className={`transition-all duration-300 overflow-hidden md:h-auto ${
-                openSections.resources ? 'max-h-48' : 'max-h-0 md:max-h-48'
+                openSections.resources ? "max-h-48" : "max-h-0 md:max-h-48"
               }`}
             >
               <nav>
@@ -227,20 +227,20 @@ export default function Footer() {
           <div className="md:col-span-2">
             <button
               className="flex justify-between items-center w-full md:cursor-default mb-4"
-              onClick={() => toggleSection('support')}
+              onClick={() => toggleSection("support")}
               aria-expanded={openSections.support}
               aria-controls="support-links"
             >
               <h3 className="text-lg font-semibold text-gray-800">Support</h3>
               <span className="md:hidden transition-transform duration-200 text-lg">
-                {openSections.support ? '−' : '+'}
+                {openSections.support ? "−" : "+"}
               </span>
             </button>
             
             <div 
               id="support-links"
               className={`transition-all duration-300 overflow-hidden md:h-auto ${
-                openSections.support ? 'max-h-48' : 'max-h-0 md:max-h-48'
+                openSections.support ? "max-h-48" : "max-h-0 md:max-h-48"
               }`}
             >
               <nav>
@@ -274,7 +274,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <button
               className="flex justify-between items-center w-full md:cursor-default mb-4"
-              onClick={() => toggleSection('legal')}
+              onClick={() => toggleSection("legal")}
               aria-expanded={openSections.legal}
               aria-controls="legal-links"
             >
@@ -287,7 +287,7 @@ export default function Footer() {
             <div 
               id="legal-links"
               className={`transition-all duration-300 overflow-hidden md:h-auto ${
-                openSections.legal ? 'max-h-48' : 'max-h-0 md:max-h-48'
+                openSections.legal ? "max-h-48" : "max-h-0 md:max-h-48"
               }`}
             >
               <nav>
@@ -327,7 +327,7 @@ export default function Footer() {
               <Link href="/license" className="hover:text-primary transition-colors">
                 Licensed under MIT License
               </Link>
-              {' • '}
+              {" • "}
               <Link href="/attributions" className="hover:text-primary transition-colors">
                 Attributions
               </Link>
