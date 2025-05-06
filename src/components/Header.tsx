@@ -20,6 +20,11 @@ export default function Header() {
                 Blog
               </Link>
             </li>
+            <li>
+              <Link href="/blog" className="hover:text-primary">
+                Blog
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
