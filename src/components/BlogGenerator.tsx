@@ -24,7 +24,7 @@ export default function BlogGenerator() {
         alert(`Error: ${data.error}`)
       }
     } catch (error) {
-      alert('Failed to generate blog post')
+      alert(error)
     } finally {
       setLoading(false)
     }
