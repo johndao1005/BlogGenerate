@@ -1,6 +1,13 @@
 import { NextResponse } from 'next/server'
 import { generateBlogPost } from '@/lib/api'
 
+export const runtime = 'edge';
+
+// Rest of your API route code
+
+// This API route handles POST requests to generate a blog post based on the provided topic and tone.
+// It expects a JSON body with the topic and tone, and returns the generated content or an error message.
+// The function uses the NextResponse object to send JSON responses back to the client.
 export async function POST(request: Request) {
   try {
     const { topic, tone } = await request.json()
