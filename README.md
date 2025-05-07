@@ -67,6 +67,20 @@ Root Directory
       Vercel Edge       Vercel Edge
       Functions          Functions
       (OpenAI Call)     (Other APIs)
+
+flowchart LR
+    Browser["Browser\n(React UI)"]
+    NextJS["Next.js SSR\n& Static Pages"]
+    OpenAI["OpenAI API\n(GPT Models)"]
+    EdgeFn1["Vercel Edge Functions\n(OpenAI Call)"]
+    EdgeFn2["Vercel Edge Functions\n(Other APIs)"]
+    
+    NextJS -->|CDN| Browser
+    OpenAI -->|API| NextJS
+    Browser -->|Request| EdgeFn1
+    EdgeFn2 -->|Response| NextJS
+
+
 Pages and components use the App Router (Next.js 14+) for hybrid rendering 
 DEV Community
 .
